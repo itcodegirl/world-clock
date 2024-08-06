@@ -1,25 +1,38 @@
+.outer-container {
+	width: 90%;
+	/* Adjust container width to fit within the browser */
+	max-width: 1200px;
+	/* Set a max width for better aesthetics on large screens */
+	margin: 20px auto;
+	/* Center the container on the page */
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	/* Apply box shadow */
+	padding: 20px;
+	/* Add padding inside the box for spacing */
+	background-color: #fff;
+	/* Background color for contrast */
+	border-radius: 8px;
+	/* Rounded corners for aesthetics */
+}
+
 .container {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	margin: 0 auto;
-	padding: 20px;
+	width: 100%;
 }
 
 .row-city {
 	display: flex;
 	width: 100%;
-	justify-content: start;
-	/* Align items to the start */
+	justify-content: space-between;
 	margin: 20px 0;
 }
 
 .col {
 	display: flex;
 	flex-direction: column;
-	/* Stack items vertically in each column */
 	justify-content: center;
-	/* Vertically center items */
 	padding: 10px;
 }
 
@@ -27,17 +40,13 @@
 	flex: 0 0 150px;
 	/* Fixed width for city name */
 	background-color: #f0f0f0;
-	/* Optional: For better visual distinction */
 	text-align: left;
 }
 
 .date-time {
 	flex: 1;
-	/* Take up remaining space */
 	background-color: #e0e0e0;
-	/* Optional: For better visual distinction */
 	text-align: left;
-	/* Align text to the left for consistency */
 }
 
 .row-dropdown {
