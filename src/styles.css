@@ -1,18 +1,37 @@
+:root {
+	/* CSS Variables for easy adjustments */
+	--container-width: 90%;
+	--max-container-width: 1200px;
+	--box-padding: 20px;
+	--box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	--background-color: #fff;
+	--border-radius: 8px;
+	--fixed-width: 150px;
+	--city-background: #f0f0f0;
+	--date-time-background: #e0e0e0;
+	--dropdown-width: 200px;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: Arial, sans-serif;
+	background-color: #f4f4f4;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+}
+
 .outer-container {
-	width: 90%;
-	/* Adjust container width to fit within the browser */
-	max-width: 1200px;
-	/* Set a max width for better aesthetics on large screens */
+	width: var(--container-width);
+	max-width: var(--max-container-width);
 	margin: 20px auto;
-	/* Center the container on the page */
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-	/* Apply box shadow */
-	padding: 20px;
-	/* Add padding inside the box for spacing */
-	background-color: #fff;
-	/* Background color for contrast */
-	border-radius: 8px;
-	/* Rounded corners for aesthetics */
+	box-shadow: var(--box-shadow);
+	padding: var(--box-padding);
+	background-color: var(--background-color);
+	border-radius: var(--border-radius);
+	box-sizing: border-box;
 }
 
 .container {
@@ -34,28 +53,52 @@
 	flex-direction: column;
 	justify-content: center;
 	padding: 10px;
+	box-sizing: border-box;
 }
 
 .city-name {
-	flex: 0 0 150px;
-	/* Fixed width for city name */
-	background-color: #f0f0f0;
+	flex: 0 0 var(--fixed-width);
+	background-color: var(--city-background);
 	text-align: left;
+	border-radius: 4px;
 }
 
 .date-time {
 	flex: 1;
-	background-color: #e0e0e0;
+	background-color: var(--date-time-background);
 	text-align: left;
+	border-radius: 4px;
 }
 
 .row-dropdown {
 	margin-bottom: 20px;
 	padding: 10px;
-	width: 200px;
+	width: var(--dropdown-width);
+	box-sizing: border-box;
 }
 
 footer {
 	text-align: center;
 	margin-top: 20px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+	.row-city {
+		flex-direction: column;
+		align-items: stretch;
+		/* Stretch items to full width */
+	}
+
+	.city-name,
+	.date-time {
+		width: 100%;
+		text-align: center;
+		margin-bottom: 10px;
+	}
+
+	.row-dropdown {
+		width: 100%;
+		/* Full-width dropdown on small screens */
+	}
 }
