@@ -1,80 +1,79 @@
-:root {
-	/* CSS Variables for easy adjustments */
-	--container-width: 90%;
-	--max-container-width: 1200px;
-	--box-padding: 20px;
-	--box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-	--background-color: #fff;
-	--border-radius: 8px;
-	--fixed-width: 150px;
-	--city-background: #f0f0f0;
-	--date-time-background: #e0e0e0;
-	--dropdown-width: 200px;
-}
-
 body {
 	margin: 0;
 	padding: 0;
-	font-family: Arial, sans-serif;
 	background-color: #f4f4f4;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	min-height: 100vh;
+	font-family: "Sofia Sans Semi Condensed", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 400;
+	font-style: normal;
 }
 
 .outer-container {
-	width: var(--container-width);
-	max-width: var(--max-container-width);
+	width: 80%;
+	max-width: 800px;
 	margin: 20px auto;
-	box-shadow: var(--box-shadow);
-	padding: var(--box-padding);
-	background-color: var(--background-color);
-	border-radius: var(--border-radius);
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	padding: 20px;
+	border-radius: 8px;
 	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	/* Center elements horizontally */
+	background-color: cadetblue;
 }
 
 .container {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	/* Center elements horizontally */
 	width: 100%;
+	background-color: antiquewhite;
+
 }
 
 .row-city {
 	display: flex;
-	width: 100%;
-	justify-content: space-between;
-	margin: 20px 0;
-}
-
-.col {
-	display: flex;
-	flex-direction: column;
+	align-items: center;
+	/* Center items vertically */
 	justify-content: center;
-	padding: 10px;
-	box-sizing: border-box;
+	/* Center items horizontally */
+	width: 100%;
+	margin: 20px 0;
+	gap: 20px;
+	/* Small gap between city and date/time */
+
 }
 
-.city-name {
-	flex: 0 0 var(--fixed-width);
-	background-color: var(--city-background);
-	text-align: left;
-	border-radius: 4px;
-}
-
+.city-name,
 .date-time {
-	flex: 1;
-	background-color: var(--date-time-background);
-	text-align: left;
+	background-color: #e0e0e0;
+	padding: 10px;
 	border-radius: 4px;
+	white-space: nowrap;
+	/* Keep text in one line */
+	text-align: center;
+	/* Center text inside each box */
+	flex-shrink: 0;
+	/* Prevent shrinking on small screens */
+	min-width: fit-content;
+	max-width: fit-content;
 }
 
 .row-dropdown {
 	margin-bottom: 20px;
 	padding: 10px;
-	width: var(--dropdown-width);
-	box-sizing: border-box;
+	width: 200px;
+	background-color: #e0e0e0;
+	font-family: "Sofia Sans Semi Condensed", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 400;
+	font-style: normal;
 }
 
 footer {
@@ -82,23 +81,16 @@ footer {
 	margin-top: 20px;
 }
 
-/* Media Queries for Responsiveness */
-@media (max-width: 768px) {
+@media (max-width: 480px) {
 	.row-city {
 		flex-direction: column;
-		align-items: stretch;
-		/* Stretch items to full width */
+		align-items: center;
 	}
 
 	.city-name,
 	.date-time {
 		width: 100%;
 		text-align: center;
-		margin-bottom: 10px;
-	}
-
-	.row-dropdown {
-		width: 100%;
-		/* Full-width dropdown on small screens */
+		/* Center text for better readability */
 	}
 }
