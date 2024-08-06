@@ -7,33 +7,34 @@
     <title>World Clock - Jenna Zawaski</title>
   </head>
   <body>
-<div class="container">
-    <h1>World Clock</h1>
+    <div class="outer-container">
+      <div class="container">
+        <h1>World Clock</h1>
 
-	<select id="city">
-		<option value="">Select a city...</option>
-		<option value="">London</option>
-		<option value="">New York</option>
-		<option value="">Auchland</option>
-	</select>
+        <select class="row-dropdown">
+          <option value="">Select a city...</option>
+          <option value="london">London</option>
+          <option value="new-york">New York</option>
+          <option value="auckland">Auckland</option>
+        </select>
 
-	<div id="city">
-		<h2>Chicago</h2>
-		<div class="date">August 5th 2024</div>
-		<div class="time">12:00:00</div>
-	</div>
-	<div id="city">
-		<h2>Paris</h2>
-		<div class="date">August 5th 2024</div>
-		<div class="time">12:00:00</div>
-	</div>
-
-    <footer>
-      This project was coded by Jenna Zawaski and is <a href="https://github.com/itcodegirl/world-clock.git" target="_blank">
-      open sourced on GitHub
-    </footer>
-    
-</div> 
-<script src="/src/javascript.js"></script> 
-</body>
+        <div class="row-city">
+          <div class="col city-name">
+            <h2>Chicago</h2>
+          </div>
+          <div class="col date-time">
+            <div class="date">August 5th 2024</div>
+            <div class="time">12:00:00 <small>AM</small></div>
+          </div>
+        </div>
+      </div>
+      <footer>
+        This project was coded by Jenna Zawaski and is
+        <a href="https://github.com/itcodegirl/world-clock.git" target="_blank"
+          >open sourced on GitHub</a
+        >
+      </footer>
+    </div>
+    <script src="/src/javascript.js"></script>
+  </body>
 </html>

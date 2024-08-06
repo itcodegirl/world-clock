@@ -1,31 +1,52 @@
-body {
-	background-color: lightgrey;
-}
-
 .container {
-	max-width: 600px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 	margin: 0 auto;
-	background: white;
-	padding: 30px;
-	box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4);
-	border-radius: 10px;
-	margin: 60px 0;
+	padding: 20px;
 }
 
-select {
-	display: block;
+.row-city {
+	display: flex;
 	width: 100%;
-	font-size: 18px;
-	border-radius: 4px;
+	justify-content: start;
+	/* Align items to the start */
+	margin: 20px 0;
+}
+
+.col {
+	display: flex;
+	flex-direction: column;
+	/* Stack items vertically in each column */
+	justify-content: center;
+	/* Vertically center items */
 	padding: 10px;
 }
 
-h1 {
-	text-align: center;
-	font-family: sans-serif;
-	font-size: 36px;
+.city-name {
+	flex: 0 0 150px;
+	/* Fixed width for city name */
+	background-color: #f0f0f0;
+	/* Optional: For better visual distinction */
+	text-align: left;
+}
+
+.date-time {
+	flex: 1;
+	/* Take up remaining space */
+	background-color: #e0e0e0;
+	/* Optional: For better visual distinction */
+	text-align: left;
+	/* Align text to the left for consistency */
+}
+
+.row-dropdown {
+	margin-bottom: 20px;
+	padding: 10px;
+	width: 200px;
 }
 
 footer {
 	text-align: center;
+	margin-top: 20px;
 }
