@@ -33,8 +33,22 @@ body {
 	align-items: center;
 	/* Center elements horizontally */
 	width: 100%;
-	background-color: antiquewhite;
+	background-image: url(../src/timezone_1.png);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
 
+}
+
+#world-clock {
+	color: cadetblue;
+	font-size: 40px;
+	text-shadow:
+		-1px -1px 0 #000,
+		1px -1px 0 #000,
+		-1px 1px 0 #000,
+		1px 1px 0 #000;
+	/* Shadow colors and positions */
 }
 
 .row-city {
