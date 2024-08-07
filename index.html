@@ -15,22 +15,22 @@
   <body>
     <div class="outer-container">
       <div class="container">
-        <h1>World Clock</h1>
+        <h1 id="world-clock">World Clock</h1>
 
-        <select class="row-dropdown">
+        <select class="row-dropdown" id="timezone-dropdown">
           <option value="">Select a city...</option>
           <option value="london">London</option>
           <option value="new-york">New York</option>
           <option value="auckland">Auckland</option>
         </select>
 
-        <div class="row-city">
-          <div class="col city-name">
+        <div class="row-city" id="city">
+          <div class="col city-name" id="city-name">
             <h2>Chicago</h2>
           </div>
-          <div class="col date-time">
-            <div class="date">August 5th 2024</div>
-            <div class="time">12:00:00 <small>AM</small></div>
+          <div class="col date-time" id="date-time">
+            <div class="date" id="date">August 5th 2024</div>
+            <div class="time" id="time">12:00:00 <small>AM</small></div>
           </div>
         </div>
       </div>
