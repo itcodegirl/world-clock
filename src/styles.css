@@ -10,6 +10,7 @@ body {
 	font-optical-sizing: auto;
 	font-weight: 400;
 	font-style: normal;
+
 }
 
 .outer-container {
@@ -45,7 +46,7 @@ body {
 
 #world-clock {
 	color: cadetblue;
-	font-size: 3vw;
+	font-size: 3rem;
 	/* Use relative font size that scales with viewport */
 	text-shadow:
 		-1px -1px 0 #000,
@@ -76,7 +77,7 @@ body {
 	/* Make the background completely transparent */
 	font-size: 1.5rem;
 	/* Keep the font size large for readability */
-	font-weight: 700;
+	font-weight: 900;
 	/* Bold text for better visibility */
 	padding: 10px 10px;
 	/* Keep padding for proper spacing */
@@ -141,7 +142,7 @@ footer {
 	.city-name,
 	.date-time {
 		width: 100%;
-		font-size: 1.5rem;
+		font-size: 1.0rem;
 		/* Reduce font size for smaller screens */
 		padding: 5px;
 		/* Adjust padding for smaller screens */
@@ -160,7 +161,7 @@ footer {
 	.date-time {
 		width: 100%;
 		text-align: wrap;
-		font-size: 1.5rem;
+		font-size: 1.0rem;
 		/* Further reduce font size for mobile */
 	}
 

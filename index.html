@@ -19,16 +19,24 @@
 
         <select class="row-dropdown" id="timezone-dropdown">
           <option value="">Select a city...</option>
-          <option value="chicago">Chicago</option>
+          <option value="America/Chicago">Chicago</option>
+          <option value="America/New_York">New York</option>
+          <option value="America/Los_Angeles">Los Angeles</option>
         </select>
 
-        <div class="row-city" id="city">
-          <div class="col city-name" id="city-name">
+        <div class="row-city" id="cities">
+          <!-- Time for Chicago -->
+          <div class="col city-name" id="city-chicago">
             <h2>Chicago</h2>
+            <div class="date" id="chicago-date">August 5th 2024</div>
+            <div class="time" id="chicago-time">12:00:00 <small>AM</small></div>
           </div>
-          <div class="col date-time" id="date-time">
-            <div class="date" id="date">August 5th 2024</div>
-            <div class="time" id="time">12:00:00 <small>AM</small></div>
+
+          <!-- Time for New York -->
+          <div class="col city-name" id="city-new-york">
+            <h2>New York</h2>
+            <div class="date" id="newyork-date">August 5th 2024</div>
+            <div class="time" id="newyork-time">12:00:00 <small>AM</small></div>
           </div>
         </div>
       </div>
