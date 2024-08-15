@@ -13,98 +13,159 @@ body {
 }
 
 .outer-container {
-	width: 80%;
-	max-width: 800px;
-	margin: 20px auto;
+	width: 80vw;
+	/* Make the width relative to the viewport width */
+	max-width: 1200px;
+	/* Set a maximum width for larger screens */
+	margin: 2vw auto;
+	/* Use viewport width for margin to adjust automatically */
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-	padding: 20px;
+	padding: 2rem;
+	/* Use rem units for scalable padding */
 	border-radius: 8px;
 	box-sizing: border-box;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	/* Center elements horizontally */
 	background-color: cadetblue;
+	transition: all 0.3s ease-in-out;
+	/* Smooth transition when resizing */
 }
 
 .container {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	/* Center elements horizontally */
 	width: 100%;
 	background-image: url(../src/timezone_1.png);
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
-
 }
 
 #world-clock {
 	color: cadetblue;
-	font-size: 40px;
+	font-size: 3vw;
+	/* Use relative font size that scales with viewport */
 	text-shadow:
 		-1px -1px 0 #000,
 		1px -1px 0 #000,
 		-1px 1px 0 #000,
 		1px 1px 0 #000;
-	/* Shadow colors and positions */
 }
 
 .row-city {
 	display: flex;
 	align-items: center;
-	/* Center items vertically */
-	justify-content: center;
-	/* Center items horizontally */
-	width: 100%;
+	justify-content: space-between;
+	/* Distribute space between elements */
 	margin: 20px 0;
 	gap: 20px;
-	/* Small gap between city and date/time */
-
+	/* Space between .city-name and .date-time */
+	box-sizing: border-box;
+	/* Ensure padding and border are included in the width */
 }
 
 .city-name,
 .date-time {
-	background-color: #e0e0e0;
-	padding: 10px;
-	border-radius: 4px;
-	white-space: nowrap;
-	/* Keep text in one line */
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: transparent;
+	/* Make the background completely transparent */
+	font-size: 1.5rem;
+	/* Keep the font size large for readability */
+	font-weight: 700;
+	/* Bold text for better visibility */
+	padding: 10px 10px;
+	/* Keep padding for proper spacing */
+	border-radius: 10px;
+	/* Smooth border radius */
+	box-shadow: shadow;
+	/* Remove box shadow */
 	text-align: center;
-	/* Center text inside each box */
-	flex-shrink: 0;
-	/* Prevent shrinking on small screens */
-	min-width: fit-content;
-	max-width: fit-content;
+	flex: 1;
+	min-width: 150px;
+	max-width: max-content;
+	box-sizing: border-box;
+}
+
+.city-name {
+	max-width: max-content;
+	min-width: min-content;
+	max-height: max-content;
+	min-height: min-content;
+	color: #000;
+	/* Slightly opaque for readability */
+}
+
+.date-time {
+	margin-left: 20px;
+	color: #000;
+	/* Dark text color for good contrast */
 }
 
 .row-dropdown {
 	margin-bottom: 20px;
 	padding: 10px;
-	width: 200px;
 	background-color: #e0e0e0;
 	font-family: "Sofia Sans Semi Condensed", sans-serif;
 	font-optical-sizing: auto;
-	font-weight: 400;
+	font-size: large;
+	font-weight: 600;
 	font-style: normal;
 }
 
 footer {
-	text-align: center;
-	margin-top: 20px;
+	background-color: cadetblue;
+	padding: 10px;
+	color: #fff;
+	border-radius: 4px;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
+	.outer-container {
+		width: 90vw;
+		/* Make the container wider on smaller screens */
+		padding: 1.5rem;
+		/* Adjust padding for smaller screens */
+	}
+
 	.row-city {
 		flex-direction: column;
-		align-items: center;
+		gap: 5px;
+		/* Reduce gap for smaller screens */
 	}
 
 	.city-name,
 	.date-time {
 		width: 100%;
-		text-align: center;
-		/* Center text for better readability */
+		font-size: 1.5rem;
+		/* Reduce font size for smaller screens */
+		padding: 5px;
+		/* Adjust padding for smaller screens */
+	}
+}
+
+@media (max-width: 480px) {
+	.outer-container {
+		width: 95vw;
+		/* Make the container almost full width on mobile */
+		padding: 1rem;
+		/* Adjust padding further for mobile */
+	}
+
+	.city-name,
+	.date-time {
+		width: 100%;
+		text-align: wrap;
+		font-size: 1.5rem;
+		/* Further reduce font size for mobile */
+	}
+
+	#world-clock {
+		font-size: 2rem;
+		/* Adjust heading size for mobile */
 	}
 }
