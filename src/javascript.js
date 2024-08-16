@@ -1,6 +1,19 @@
 let currentInterval;
 
-// Function to update the time for a given city
+// Populate the dropdown with all timezones dynamically
+function populateTimezones() {
+	const timezoneDropdown = document.querySelector('#timezone-dropdown');
+	const timezones = moment.tz.names(); // Get all timezone names
+
+	timezones.forEach(timezone => {
+		const option = document.createElement('option');
+		option.value = timezone;
+		option.textContent = timezone.replace('_', ' '); // Replace underscores with spaces for readability
+		timezoneDropdown.appendChild(option);
+	});
+}
+
+// Function to update the time for a given city with animation
 function updateTime(cityTimeZone = "America/Chicago", cityName) {
 	let cityTime = moment().tz(cityTimeZone);
 	let citiesElement = document.querySelector('#cities');
@@ -16,6 +29,8 @@ function updateTime(cityTimeZone = "America/Chicago", cityName) {
                     </div>
                 </div>
             `;
+
+	// Insert new city and apply animations
 	citiesElement.insertAdjacentHTML('beforeend', newCityElement);
 }
 
@@ -43,6 +58,7 @@ citiesSelectElement.addEventListener('change', updateCity);
 
 // Display Chicago time by default when the page loads
 window.onload = function () {
+	populateTimezones(); // Populate the dropdown on page load
 	updateTime("America/Chicago", "Chicago");
 	currentInterval = setInterval(() => {
 		updateTime("America/Chicago", "Chicago");
