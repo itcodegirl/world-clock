@@ -52,7 +52,7 @@ body {
 		-1px -1px 0 #000,
 		1px -1px 0 #000,
 		-1px 1px 0 #000,
-		1px 1px 0 #000;
+		3px 3px 0 #000;
 }
 
 .row-city {
@@ -107,7 +107,8 @@ body {
 	/* Dark text color for good contrast */
 }
 
-.row-dropdown {
+.row-dropdown,
+#search-input {
 	margin-bottom: 20px;
 	padding: 10px;
 	background-color: #e0e0e0;
@@ -117,7 +118,6 @@ body {
 	font-weight: 600;
 	font-style: normal;
 }
-
 
 footer {
 	background-color: cadetblue;
