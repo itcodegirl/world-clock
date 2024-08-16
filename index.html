@@ -10,6 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Semi+Condensed:ital@0;1&display=swap"
       rel="stylesheet"
     />
+    >
     <title>World Clock - Jenna Zawaski</title>
   </head>
   <body>
@@ -17,11 +18,15 @@
       <div class="container">
         <h1 id="world-clock">World Clock</h1>
 
+        <!-- Search input field for filtering the dropdown -->
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Search for a timezone..."
+        />
+
         <select class="row-dropdown" id="timezone-dropdown">
           <option value="">Select a city...</option>
-          <option value="America/Chicago">Chicago</option>
-          <option value="America/New_York">New York</option>
-          <option value="America/Los_Angeles">Los Angeles</option>
         </select>
 
         <div class="row-city" id="cities"></div>

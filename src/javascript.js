@@ -1,11 +1,12 @@
 let currentInterval;
+let allTimezones = [];  // Store all the timezones for filtering
 
 // Populate the dropdown with all timezones dynamically
 function populateTimezones() {
 	const timezoneDropdown = document.querySelector('#timezone-dropdown');
-	const timezones = moment.tz.names(); // Get all timezone names
+	allTimezones = moment.tz.names(); // Get all timezone names
 
-	timezones.forEach(timezone => {
+	allTimezones.forEach(timezone => {
 		const option = document.createElement('option');
 		option.value = timezone;
 		option.textContent = timezone.replace('_', ' '); // Replace underscores with spaces for readability
@@ -52,9 +53,32 @@ function updateCity(event) {
 	}, 1000);
 }
 
+// Filter the dropdown based on search input
+function filterTimezones() {
+	const searchTerm = document.querySelector('#search-input').value.toLowerCase();
+	const timezoneDropdown = document.querySelector('#timezone-dropdown');
+
+	// Clear the existing dropdown options
+	timezoneDropdown.innerHTML = '<option value="">Select a city...</option>';
+
+	// Filter and display matching timezones
+	const filteredTimezones = allTimezones.filter(timezone => timezone.toLowerCase().includes(searchTerm));
+
+	filteredTimezones.forEach(timezone => {
+		const option = document.createElement('option');
+		option.value = timezone;
+		option.textContent = timezone.replace('_', ' ');
+		timezoneDropdown.appendChild(option);
+	});
+}
+
 // Get the dropdown element and set event listener for new city selection
 let citiesSelectElement = document.querySelector('#timezone-dropdown');
 citiesSelectElement.addEventListener('change', updateCity);
+
+// Set event listener for the search input to filter the dropdown
+let searchInputElement = document.querySelector('#search-input');
+searchInputElement.addEventListener('input', filterTimezones);
 
 // Display Chicago time by default when the page loads
 window.onload = function () {
