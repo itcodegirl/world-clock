@@ -93,6 +93,12 @@ body {
 }
 
 .city-name {
+	font-size: 2.5rem;
+	font-weight: 700;
+	color: #fff;
+	text-transform: uppercase;
+	margin-bottom: 10px;
+	text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
 	max-width: max-content;
 	min-width: min-content;
 	max-height: max-content;
@@ -102,9 +108,17 @@ body {
 }
 
 .date-time {
-	margin-left: 20px;
-	color: #000;
-	/* Dark text color for good contrast */
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-size: 1.5rem;
+	font-weight: 600;
+	color: #fff;
+	background-color: rgba(255, 255, 255, 0.1);
+	padding: 15px 20px;
+	border-radius: 10px;
+	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+	text-align: center;
 }
 
 .row-dropdown,
@@ -117,7 +131,9 @@ body {
 	font-size: large;
 	font-weight: 600;
 	font-style: normal;
+	border-radius: 5px;
 }
+
 
 footer {
 	background-color: cadetblue;
@@ -129,45 +145,39 @@ footer {
 @media (max-width: 768px) {
 	.outer-container {
 		width: 90vw;
-		/* Make the container wider on smaller screens */
 		padding: 1.5rem;
-		/* Adjust padding for smaller screens */
 	}
 
 	.row-city {
 		flex-direction: column;
-		gap: 5px;
-		/* Reduce gap for smaller screens */
+		gap: 10px;
 	}
 
-	.city-name,
+	.city-name {
+		font-size: 2rem;
+	}
+
 	.date-time {
-		width: 100%;
-		font-size: 1.0rem;
-		/* Reduce font size for smaller screens */
-		padding: 5px;
-		/* Adjust padding for smaller screens */
+		font-size: 1.2rem;
+		padding: 10px 15px;
 	}
 }
 
 @media (max-width: 480px) {
 	.outer-container {
 		width: 95vw;
-		/* Make the container almost full width on mobile */
 		padding: 1rem;
-		/* Adjust padding further for mobile */
 	}
 
-	.city-name,
+	.city-name {
+		font-size: 1.5rem;
+	}
+
 	.date-time {
-		width: 100%;
-		text-align: wrap;
-		font-size: 1.0rem;
-		/* Further reduce font size for mobile */
+		font-size: 1rem;
 	}
 
 	#world-clock {
 		font-size: 2rem;
-		/* Adjust heading size for mobile */
 	}
 }
